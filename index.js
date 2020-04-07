@@ -6,7 +6,7 @@ const TOKEN = "868091765:AAHtw0_MYyHSugZkbmcsKxz1AvQEJRb1f68";
 const server = express();
 const bot = new TelegramBot(TOKEN, { polling: true } );
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 const gameName = "Billionaire";
 
 const queries = {};
@@ -25,7 +25,7 @@ bot.on("callback_query", function (query) {
     } else {
         queries[query.id] = query;
         // let gameurl = "https://trexgame.herokuapp.com/index.html?id="+query.id;
-        let gameurl = "https://www.pin-upua.com/?id="+query.id;
+        let gameurl = "http://92.53.120.10/TyGZKPcs?af_siteid={source_game_id}";
         bot.answerCallbackQuery({
             callback_query_id: query.id,
             url: gameurl
@@ -55,4 +55,6 @@ server.get("/highscore/:score", function(req, res, next) {
     bot.setGameScore(query.from.id, parseInt(req.params.score), options, 
         function (err, result) {});
 });
-server.listen(port);
+server.listen(port, ()=> {
+    console.log("Server has been started")
+});

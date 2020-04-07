@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node index"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,5 +13,19 @@
     "morgan": "~1.9.1",
     "node-telegram-bot-api": "^0.40.0",
     "pug": "2.0.0-beta11"
-  }
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andron323/nodeBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andron323/nodeBot/issues"
+  },
+  "homepage": "https://github.com/Andron323/nodeBot#readme",
+  "description": ""
 }
